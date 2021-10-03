@@ -1,0 +1,7 @@
+---
+name: OnlinePlayersLog
+version: 1.0.0
+main: Kygekraqmak\OnlinePlayersLog\OnlinePlayersLog
+api: 3.0.0
+author: Kygekraqmak
+...
