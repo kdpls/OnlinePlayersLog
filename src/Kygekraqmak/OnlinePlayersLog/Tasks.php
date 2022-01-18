@@ -20,13 +20,13 @@ class Tasks extends Task {
         return $this->main;
     }
 
-    public function onRun(int $ticks) {
+    public function onRun() : void {
         $server = $this->main()->getServer();
         $players = $server->getOnlinePlayers();
         $plynames = '';
         if (count($players) > 0) {
             foreach ($players as $player) {
-                $plynames .= $player->getName() . ' (' . $this->getPlayerLocation($player->getAddress()) . ')' . ', ';
+                $plynames .= $player->getName() . ' (' . $this->getPlayerLocation($player->getNetworkSession()->getIp()) . ')' . ', ';
             }
         }
         $logs = fopen($this->main()->getDataFolder().'onlineplayerslog.log', 'a+');

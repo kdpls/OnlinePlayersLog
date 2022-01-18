@@ -13,7 +13,7 @@ use Kygekraqmak\OnlinePlayersLog\Tasks;
 
 class OnlinePlayersLog extends PluginBase implements Listener {
 
-    public function onEnable() {
+    protected function onEnable() : void {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getScheduler()->scheduleRepeatingTask(new Tasks($this), 5 * 60 * 20);
     }
